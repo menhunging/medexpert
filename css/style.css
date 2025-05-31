@@ -241,13 +241,10 @@ body {
     line-height: 20px;
   }
 }
-@media (max-width: 1199px) {
-  body {
-    font-size: 18px;
-    line-height: 30px;
-  }
-}
 body.modal-open, body.hidden {
+  overflow: hidden;
+}
+body.isOpenMenu {
   overflow: hidden;
 }
 body.isOpenMenu .header {

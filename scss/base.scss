@@ -17,17 +17,14 @@ body {
     line-height: 20px;
   }
 
-  @include responsive1199 {
-    font-size: 18px;
-    line-height: 30px;
-  }
-
   &.modal-open,
   &.hidden {
     overflow: hidden;
   }
 
   &.isOpenMenu {
+    overflow: hidden;
+
     .header {
       z-index: 15;
     }

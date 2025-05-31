@@ -55,9 +55,9 @@ $(document).ready(function () {
       body.removeClass("isOpenMenu");
       menu.removeClass("opened").stop().slideUp();
 
-      siteTimeOut(() => {
+      setTimeout(() => {
         menu.attr("style", "");
-      }, 300);
+      }, 500);
     }
 
     $(window).resize(function () {
