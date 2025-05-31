@@ -11,7 +11,6 @@
 
       @include responsive767 {
         margin-top: -96px;
-        opacity: 0;
       }
     }
   }
@@ -209,6 +208,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @include responsive767 {
+    background-color: $colorWhite;
+    position: relative;
+  }
 
   @include responsive479 {
     align-items: flex-start;

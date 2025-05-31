@@ -32,7 +32,6 @@ $(document).ready(function () {
     let burger = $(".burger");
     let menu = $(".menu");
     let body = $("body");
-    let overlay = $(".overlay");
     let burgerClose = $(".burger-close");
 
     burgerClose.on("click", function () {
@@ -49,18 +48,12 @@ $(document).ready(function () {
       } else {
         body.addClass("isOpenMenu");
         menu.addClass("opened").stop().slideDown();
-        overlay.addClass("visible");
-        overlay.on("click", function () {
-          closeMenu();
-        });
       }
     }
 
     function closeMenu() {
       body.removeClass("isOpenMenu");
       menu.removeClass("opened").stop().slideUp();
-      overlay.removeClass("visible");
-      overlay.off("click");
     }
 
     $(window).resize(function () {

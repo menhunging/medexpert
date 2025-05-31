@@ -1029,8 +1029,8 @@ section {
     color: rgb(255, 255, 255);
   }
 }
-.btn:disabled {
-  opacity: 0.5;
+.btn .disabled, .btn:disabled {
+  opacity: 0.33;
   pointer-events: none;
 }
 
@@ -1358,7 +1358,6 @@ h4,
 @media (max-width: 767px) {
   .header.isScroll .header-top {
     margin-top: -96px;
-    opacity: 0;
   }
 }
 @media (max-width: 767px) {
@@ -1561,6 +1560,12 @@ h4,
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+@media (max-width: 767px) {
+  .header-center {
+    background-color: rgb(255, 255, 255);
+    position: relative;
+  }
 }
 @media (max-width: 479px) {
   .header-center {
