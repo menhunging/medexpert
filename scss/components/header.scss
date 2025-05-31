@@ -1,0 +1,517 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: $colorWhite;
+
+  &.isScroll {
+    .header-top {
+      margin-top: -55px;
+
+      @include responsive767 {
+        margin-top: -96px;
+        opacity: 0;
+      }
+    }
+  }
+
+  .container {
+    @include responsive767 {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+}
+
+// header-top
+
+.header-top {
+  background-color: $colorGray;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 25px;
+  margin-top: 12px;
+  transition: margin 0.3s;
+
+  @include responsive767 {
+    margin: 0;
+    background-color: transparent;
+    padding: 0;
+    transition: margin 0.3s, opacity 0.3s;
+  }
+}
+
+.header-top__adress {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+
+  @include responsive1649 {
+    font-size: 15px;
+  }
+
+  @include responsive1439 {
+    font-size: 14px;
+  }
+
+  @include responsive767 {
+    display: none;
+  }
+
+  @include before {
+    position: relative;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='11' height='14' viewBox='0 0 11 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M10.0572 13.2582H1.01983C0.838769 13.2582 0.692383 13.0387 0.692383 12.769V12.5687C0.692383 12.2952 0.838769 12.0756 1.01983 12.0756H10.0572C10.2383 12.0756 10.3847 12.2952 10.3847 12.5648V12.7651C10.3847 13.0348 10.2383 13.2582 10.0572 13.2582Z' fill='white'/%3e%3cpath d='M8.40853 1.62054C6.84066 0.164381 4.16333 0.17979 2.62242 1.65521C0.927425 3.27701 0.730959 5.93508 2.2449 7.75335C2.98839 8.64708 3.79737 9.48687 4.65257 10.3922C5.10328 10.8698 5.86218 10.8775 6.3206 10.4076C7.249 9.4599 8.0965 8.62396 8.85154 7.71098C10.3616 5.88115 10.1189 3.21538 8.40853 1.62054ZM7.63422 6.82881C7.06794 7.56844 6.38224 8.21947 5.49622 9.19025C4.66798 8.24644 4.00924 7.57229 3.4391 6.83266C2.40284 5.48436 2.50686 3.81248 3.63942 2.80318C4.68339 1.87094 6.37838 1.86708 7.42235 2.79548C8.55877 3.81248 8.67819 5.46125 7.63422 6.82881Z' fill='white'/%3e%3c/svg%3e ");
+    width: 33px;
+    height: 33px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: $colorBlue;
+    border-radius: 24px;
+    display: block;
+  }
+}
+
+.header-top__right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  position: relative;
+
+  @include responsive767 {
+    width: 100%;
+    padding-bottom: 12px;
+  }
+}
+
+.header-top__controls {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  @include responsive767 {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+}
+
+.search-block {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  @include responsive767 {
+    width: 100%;
+    flex-direction: row-reverse;
+    height: 42px;
+    padding: 0 10px;
+    order: 2;
+  }
+
+  .search-block__label {
+    font-weight: 400;
+    font-size: 14px;
+  }
+
+  .search-block__input {
+    width: 0px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    border: 0;
+    background-color: $colorWhite;
+    padding: 0;
+    border-radius: 40px;
+    overflow: hidden;
+    transition: width 0.3s;
+
+    @include responsive767 {
+      width: 100%;
+      right: auto;
+      left: 0;
+      border: solid 1px $colorGray;
+    }
+
+    .input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      padding: 0 50px 0 15px;
+
+      @include responsive767 {
+        padding-left: 50px;
+        padding-right: 50px;
+        font-size: 14px;
+      }
+    }
+
+    &.opened {
+      width: 324px;
+
+      @include responsive1023 {
+        width: 200px;
+      }
+    }
+  }
+
+  .btn {
+    @include responsive767 {
+      margin-right: auto;
+      pointer-events: none;
+      width: 27px;
+      height: 27px;
+    }
+  }
+}
+
+.header-top__phone {
+  font-size: 25px;
+  transition: color 0.3s;
+
+  @include responsive1649 {
+    font-size: 20px;
+  }
+
+  @include responsive1439 {
+    font-size: 18px;
+  }
+
+  @include responsive1199 {
+    display: none;
+  }
+
+  @include responsive767 {
+    display: flex;
+    margin-left: auto;
+    position: absolute;
+    top: 3px;
+    right: 0;
+  }
+
+  @include hover {
+    color: $colorRed;
+  }
+}
+
+// header-center
+
+.header-center {
+  padding: 12px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include responsive479 {
+    align-items: flex-start;
+  }
+
+  .logo {
+    position: relative;
+    width: 435px;
+    height: 59px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+
+    @include responsive1649 {
+      width: 350px;
+      height: 50px;
+      font-size: 14px;
+    }
+
+    @include responsive1439 {
+      width: 320px;
+      font-size: 12px;
+      line-height: 15px;
+    }
+
+    @include responsive479 {
+      height: 80px;
+      width: 150px;
+    }
+
+    .logo__link {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      width: 100%;
+      height: 100%;
+
+      @include responsive1649 {
+        gap: 10px;
+      }
+
+      @include responsive479 {
+        flex-direction: column;
+        display: flex;
+        align-items: flex-start;
+        gap: 5px;
+      }
+    }
+
+    .logo__text {
+      flex: 1;
+
+      @include responsive479 {
+        flex: initial;
+        width: 100%;
+      }
+    }
+
+    .picture-block {
+      width: 195px;
+      height: 59px;
+
+      @include responsive1649 {
+        width: 130px;
+        height: 40px;
+      }
+
+      @include responsive479 {
+        width: 133px;
+        height: 40px;
+      }
+
+      img {
+        object-fit: contain;
+      }
+    }
+  }
+
+  .header-center__call {
+    width: 230px;
+
+    @include responsive1439 {
+      width: 200px;
+    }
+
+    @include responsive1199 {
+      display: none;
+    }
+  }
+}
+
+// menu
+
+.menu {
+  flex-grow: 1;
+
+  @include responsiveMinWidth1200 {
+    display: block !important;
+    width: 100%;
+  }
+
+  @include responsive1199 {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+    background-color: $colorWhite;
+    padding: 14px 10px;
+    z-index: 15;
+    flex: initial;
+  }
+
+  .menu__list {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 105px;
+
+    @include responsive1649 {
+      padding: 0 50px;
+    }
+
+    @include responsive1439 {
+      padding: 0 30px;
+    }
+
+    @include responsive1199 {
+      padding: 20px 0;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
+  .menu__item {
+    position: relative;
+
+    @include hover {
+      .menu__link--arrow:after {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .menu__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s;
+
+    @include hover {
+      color: $colorRed;
+    }
+  }
+
+  .menu__link--arrow {
+    @include after {
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='8' height='7' viewBox='0 0 8 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M4.86603 6.5C4.48113 7.16667 3.51887 7.16667 3.13397 6.5L0.535899 2C0.150999 1.33333 0.632124 0.499999 1.40192 0.499999L6.59808 0.5C7.36788 0.5 7.849 1.33333 7.4641 2L4.86603 6.5Z' fill='%231753C3'/%3e%3c/svg%3e ");
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+      width: 10px;
+      height: 10px;
+
+      @include responsive1199 {
+        display: none;
+      }
+    }
+
+    @include hover {
+      & + .menu-sub {
+        display: block;
+      }
+    }
+  }
+
+  .header-center__phone {
+    display: none;
+    font-size: 25px;
+    transition: color 0.3s;
+
+    @include hover {
+      color: $colorRed;
+    }
+
+    @include responsive1199 {
+      display: flex;
+    }
+  }
+
+  .header-center__call {
+    display: none;
+
+    @include responsive1199 {
+      display: flex;
+      margin-top: 11px;
+    }
+  }
+}
+
+.menu-sub {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding-top: 10px;
+  display: none;
+
+  @include responsive1199 {
+    position: relative;
+    display: flex;
+    padding: 0;
+  }
+
+  .menu-sub__list {
+    background-color: $colorWhite;
+    box-shadow: 0px 0px 5px 5px $colorBlack-a1;
+    border-radius: 24px;
+    padding: 24px;
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    @include responsive1199 {
+      gap: 9px;
+      box-shadow: none;
+      padding: 0;
+      margin-top: 11px;
+    }
+  }
+
+  .menu-sub__item {
+  }
+
+  .menu-sub__link {
+    transition: color 0.3s;
+
+    @include responsive1199 {
+      color: #868686;
+    }
+
+    @include hover {
+      color: $colorRed;
+    }
+  }
+
+  @include hover {
+    display: block;
+  }
+}
+
+.burger {
+  cursor: pointer;
+  display: none;
+  width: 50px;
+  height: 47px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: transform 0.3s;
+  pointer-events: none;
+  background-color: $colorBlue;
+  border-radius: 15px;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='22' height='21' viewBox='0 0 22 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cline x1='0.0351562' y1='1.47369' x2='21.965' y2='1.47369' stroke='white' stroke-width='2.63158'/%3e%3cline x1='0.0351562' y1='10.2456' x2='21.965' y2='10.2456' stroke='white' stroke-width='2.63158'/%3e%3cline x1='0.0351562' y1='19.0176' x2='21.965' y2='19.0176' stroke='white' stroke-width='2.63158'/%3e%3c/svg%3e ");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+
+  @include responsive1199 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    pointer-events: initial;
+  }
+}
+
+.burger-close {
+  cursor: pointer;
+  display: none;
+  width: 50px;
+  height: 47px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: transform 0.3s;
+  pointer-events: none;
+  background-color: $colorBlue;
+  border-radius: 15px;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='15' height='18' viewBox='0 0 15 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M5.94 8.6925L0.24 0.652498H2.76L7.2 6.9825L11.61 0.652498H14.16L8.43 8.6925L14.16 17.0625H11.61L7.2 10.4925L2.76 17.0625H0.24L5.94 8.6925Z' fill='white'/%3e%3c/svg%3e ");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 15px;
+
+  @include responsive1199 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    pointer-events: initial;
+  }
+}
