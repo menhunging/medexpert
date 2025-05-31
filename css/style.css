@@ -317,12 +317,12 @@ div::-webkit-scrollbar-thumb {
 }
 @media (max-width: 767px) {
   .main {
-    padding-top: 74px;
+    padding-top: 171px;
   }
 }
 @media (max-width: 479px) {
   .main {
-    padding-top: 104px;
+    padding-top: 201px;
   }
 }
 
@@ -1445,6 +1445,7 @@ h4,
   .header-top__controls {
     flex-wrap: wrap;
     width: 100%;
+    gap: 10px 14px;
   }
 }
 
@@ -1669,11 +1670,22 @@ h4,
 
 .menu {
   flex-grow: 1;
+  width: calc(100% - 435px - 230px);
 }
 @media (min-width: 1200px) {
   .menu {
     display: block !important;
-    width: 100%;
+    height: auto !important;
+  }
+}
+@media (max-width: 1649px) {
+  .menu {
+    width: calc(100% - 350px - 230px);
+  }
+}
+@media (max-width: 1439px) {
+  .menu {
+    width: calc(100% - 320px - 200px);
   }
 }
 @media (max-width: 1199px) {
@@ -1688,6 +1700,7 @@ h4,
     padding: 14px 10px;
     z-index: 15;
     flex: initial;
+    overflow: auto;
   }
 }
 .menu .menu__list {

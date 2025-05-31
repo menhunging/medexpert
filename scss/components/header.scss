@@ -95,6 +95,7 @@
   @include responsive767 {
     flex-wrap: wrap;
     width: 100%;
+    gap: 10px 14px;
   }
 }
 
@@ -313,10 +314,19 @@
 
 .menu {
   flex-grow: 1;
+  width: calc(100% - 435px - 230px);
 
   @include responsiveMinWidth1200 {
     display: block !important;
-    width: 100%;
+    height: auto !important;
+  }
+
+  @include responsive1649 {
+    width: calc(100% - 350px - 230px);
+  }
+
+  @include responsive1439 {
+    width: calc(100% - 320px - 200px);
   }
 
   @include responsive1199 {
@@ -330,6 +340,7 @@
     padding: 14px 10px;
     z-index: 15;
     flex: initial;
+    overflow: auto;
   }
 
   .menu__list {

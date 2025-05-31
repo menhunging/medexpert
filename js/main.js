@@ -54,10 +54,16 @@ $(document).ready(function () {
     function closeMenu() {
       body.removeClass("isOpenMenu");
       menu.removeClass("opened").stop().slideUp();
+
+      siteTimeOut(() => {
+        menu.attr("style", "");
+      }, 300);
     }
 
     $(window).resize(function () {
-      $(window).width() >= 1200 && closeMenu();
+      if (body.hasClass("isOpenMenu")) {
+        $(window).width() >= 1200 && closeMenu();
+      }
     });
   }
 
