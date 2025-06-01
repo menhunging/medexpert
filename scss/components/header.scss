@@ -4,6 +4,7 @@
   left: 0;
   width: 100%;
   background-color: $colorWhite;
+  z-index: 5;
 
   &.isScroll {
     .header-top {

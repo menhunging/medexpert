@@ -18,7 +18,7 @@
   letter-spacing: 0em;
   text-align: center;
   padding: 20px 33px;
-  border-radius: 24px;
+  border-radius: 20px;
   font-variant-ligatures: none;
   font-family: $fontMain;
   width: 100%;
@@ -37,6 +37,18 @@
 
     @include hover {
       background-color: $colorDark;
+      color: $colorWhite;
+    }
+  }
+
+  &--fullWhite {
+    border-color: $colorWhite;
+    color: $colorBlack;
+    background-color: $colorWhite;
+
+    @include hover {
+      background-color: $colorRed;
+      border-color: $colorRed;
       color: $colorWhite;
     }
   }

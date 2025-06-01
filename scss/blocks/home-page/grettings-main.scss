@@ -1,0 +1,213 @@
+.grettings-main {
+  background-color: #132e61;
+  color: $colorWhite;
+  min-height: 755px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url("../../../img/bg-grettings.png");
+  background-image: image-set(
+    url("../../../img/bg-grettings.webp") type("image/webp"),
+    url("../../../img/bg-grettings.png") type("image/png")
+  );
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+
+  @include responsive1549 {
+    min-height: 600px;
+  }
+
+  @include responsive1439 {
+    min-height: 520px;
+  }
+
+  @include responsive1199 {
+    min-height: 450px;
+  }
+
+  @include responsive1023 {
+    min-height: 390px;
+  }
+
+  .container {
+  }
+
+  .grettings-main__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 32px;
+    max-width: 640px;
+    gap: 10px;
+
+    @include responsive1549 {
+      font-size: 28px;
+      line-height: 30px;
+    }
+
+    @include responsive1439 {
+      font-size: 24px;
+      line-height: 28px;
+      gap: 0;
+    }
+
+    @include responsive1199 {
+      font-size: 22px;
+      line-height: 24px;
+    }
+
+    @include responsive1023 {
+      font-size: 18px;
+      line-height: 20px;
+    }
+
+    @include responsive389 {
+      font-size: 14px;
+    }
+  }
+
+  .grettings-main__sales {
+    font-size: 24px;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 66px;
+
+    @include responsive1549 {
+      font-size: 22px;
+      margin-bottom: 30px;
+    }
+
+    @include responsive1439 {
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    @include responsive1199 {
+      font-size: 18px;
+      line-height: 22px;
+    }
+
+    @include responsive1023 {
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    @include responsive767 {
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    .grettings-main__text {
+      font-weight: 400;
+    }
+
+    .grettings-main__sale {
+      font-weight: 400;
+      font-size: 83px;
+      line-height: 88px;
+      background-color: $colorRed;
+      height: 77px;
+      padding: 0 5px;
+
+      @include responsive1549 {
+        font-size: 70px;
+        line-height: 80px;
+        height: 70px;
+      }
+
+      @include responsive1439 {
+        font-size: 60px;
+        line-height: 70px;
+        height: 60px;
+      }
+
+      @include responsive1199 {
+        font-size: 50px;
+        line-height: 60px;
+        height: 55px;
+      }
+
+      @include responsive1023 {
+        font-size: 45px;
+        line-height: 50px;
+        height: 45px;
+      }
+    }
+  }
+
+  .caption {
+  }
+
+  .grettings-main__controls {
+    margin-top: 40px;
+    position: relative;
+    z-index: 3;
+
+    @include responsive1439 {
+      margin-top: 30px;
+    }
+
+    @include responsive1023 {
+      margin-top: 20px;
+    }
+
+    @include responsive767 {
+      width: 100%;
+      margin-bottom: -35px;
+    }
+
+    .btn {
+    }
+  }
+
+  .picture-block {
+    position: absolute;
+    left: calc(50% - 125px);
+    top: 0;
+    width: 1000px;
+    height: 755px;
+    pointer-events: none;
+
+    @include responsive1549 {
+      width: 780px;
+      height: 600px;
+      left: calc(50% - 65px);
+    }
+
+    @include responsive1439 {
+      width: 700px;
+      height: 520px;
+      left: calc(50% - 75px);
+    }
+
+    @include responsive1199 {
+      width: 610px;
+      height: 450px;
+      left: calc(50% - 75px);
+    }
+
+    @include responsive1023 {
+      width: 520px;
+      height: 390px;
+      left: calc(50% - 55px);
+    }
+
+    @include responsive767 {
+      position: relative;
+      height: auto;
+      width: 100%;
+      padding-top: calc(313px / 420px * 100%);
+      top: auto;
+      left: auto;
+      margin: 0 auto;
+      bottom: -30px;
+    }
+  }
+}
