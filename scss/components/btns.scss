@@ -41,6 +41,17 @@
     }
   }
 
+  &--black {
+    background-color: $colorBlack;
+    border-color: $colorBlack;
+    color: $colorWhite;
+
+    @include hover {
+      background-color: transparent;
+      color: $colorBlack;
+    }
+  }
+
   .disabled,
   &:disabled {
     opacity: 0.33;

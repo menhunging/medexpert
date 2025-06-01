@@ -67,6 +67,11 @@ $(document).ready(function () {
     });
   }
 
+  if ($(".thisYear").length > 0) {
+    let date = new Date();
+    $(".thisYear").text(date.getFullYear());
+  }
+
   // base
 
   if ($(".grettings-main-slider").length > 0) {
@@ -124,11 +129,6 @@ $(document).ready(function () {
         clearIncomplete: true,
       });
     });
-  }
-
-  if ($(".thisYear").length > 0) {
-    let date = new Date();
-    $(".thisYear").text(date.getFullYear());
   }
 
   if ($("[data-fancybox]").length > 0) {
@@ -282,7 +282,6 @@ function scrollDesktop() {
 function scrollTouch() {
   let lastY = 0;
   let lastDirection = null;
-  let debounceTimeout;
 
   document.addEventListener("touchstart", (event) => {
     lastY = event.touches[0].clientY;
@@ -296,21 +295,18 @@ function scrollTouch() {
     if (Math.abs(currentY - lastY) < 10) return;
 
     if (direction !== lastDirection) {
-      clearTimeout(debounceTimeout);
-      debounceTimeout = setTimeout(() => {
-        if (direction === "up") {
-          $(".header").removeClass("isScroll");
-        } else {
-          $(".header").addClass("isScroll");
-        }
-        lastDirection = direction;
-      }, 100); // Задержка 100 мс
+      if (direction === "up") {
+        $(".header").removeClass("isScroll");
+      } else {
+        $(".header").addClass("isScroll");
+      }
+      lastDirection = direction;
     }
 
     lastY = currentY;
   });
 }
 
-function clearInput(input, btn) {
+function clearInput(input) {
   input.val("").focus().trigger("input");
 }
