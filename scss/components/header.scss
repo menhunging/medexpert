@@ -469,7 +469,7 @@
     transition: color 0.3s;
 
     @include responsive1199 {
-      color: #868686;
+      color: $colorGrayDark;
     }
 
     @include hover {

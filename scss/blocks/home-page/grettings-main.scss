@@ -5,10 +5,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-image: url("../../../img/bg-grettings.png");
+  background-image: url("../img/bg-grettings.png");
   background-image: image-set(
-    url("../../../img/bg-grettings.webp") type("image/webp"),
-    url("../../../img/bg-grettings.png") type("image/png")
+    url("../img/bg-grettings.webp") type("image/webp"),
+    url("../img/bg-grettings.png") type("image/png")
   );
   background-position: top;
   background-repeat: no-repeat;

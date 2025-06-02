@@ -1,0 +1,121 @@
+.reviews-section {
+}
+
+.reviews-slider {
+  margin-top: 38px;
+
+  @include responsive1439 {
+    margin-top: 20px;
+  }
+}
+
+.reviews-item {
+  border: solid 1px #d0d0d0;
+  padding: 15px;
+  border-radius: 40px;
+
+  @include responsive1439 {
+    padding: 10px;
+    border-radius: 30px;
+  }
+
+  .picture-block {
+    width: 100%;
+    height: auto;
+    padding-top: calc(345 / 488 * 100%);
+    @include invisLink;
+  }
+
+  .reviews-item__content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    position: relative;
+    padding-right: 115px;
+    padding-left: 15px;
+
+    @include responsive479 {
+      padding-right: 85px;
+    }
+
+    @include responsive389 {
+      padding-left: 5px;
+    }
+  }
+
+  .reviews-item__name {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 25px;
+    text-transform: uppercase;
+
+    @include responsive1023 {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+
+  .reviews-item__date {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+    color: $colorGrayDark;
+
+    @include responsive1023 {
+      font-size: 14px;
+      line-height: 19px;
+    }
+  }
+
+  .reviews-item__rating {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+    color: $colorGrayDark;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: absolute;
+    right: 10px;
+    top: 0;
+
+    @include responsive1023 {
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    @include responsive389 {
+      right: 5px;
+    }
+
+    .star {
+      position: relative;
+      width: 49px;
+      height: 43px;
+      border-radius: 14px;
+      overflow: hidden;
+      z-index: 2;
+      background: linear-gradient(107.23deg, #51c5ff 8.68%, #079af8 94.02%);
+
+      @include responsive1023 {
+        width: 30px;
+        height: 30px;
+        border-radius: 9px;
+      }
+
+      @include after {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='19' height='19' viewBox='0 0 19 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M9.75637 0.591797C10.4277 0.613307 11.0176 0.975728 11.3746 1.69796C11.9502 2.86279 12.5193 4.03089 13.0833 5.20158C13.1635 5.36845 13.2625 5.43103 13.4455 5.45645C14.7306 5.63636 16.0151 5.82669 17.2976 6.02551C18.0698 6.14544 18.5918 6.59456 18.8337 7.33961C19.0788 8.09574 18.9113 8.77625 18.3505 9.33683C17.4276 10.2598 16.495 11.1731 15.561 12.0843C15.4388 12.2036 15.3994 12.3073 15.4304 12.4852C15.6581 13.7752 15.8734 15.0671 16.0869 16.3597C16.2156 17.138 15.9633 17.782 15.3424 18.2507C14.7041 18.7324 14.0043 18.7865 13.2929 18.4156C12.1837 17.8368 11.0764 17.2521 9.97886 16.6511C9.73244 16.5162 9.54811 16.5096 9.29782 16.6478C8.2229 17.2404 7.13505 17.8081 6.05108 18.3837C5.32994 18.7663 4.6198 18.7552 3.95364 18.2703C3.34051 17.8237 3.06887 17.1993 3.17171 16.4399C3.26225 15.7711 3.39031 15.1069 3.50349 14.4414C3.61926 13.7595 3.74279 13.079 3.84692 12.3953C3.85986 12.3079 3.79648 12.1808 3.72792 12.113C2.78624 11.1744 1.82838 10.252 0.893816 9.3062C0.0284505 8.43013 0.179792 6.97197 1.20749 6.32339C1.47137 6.15652 1.79799 6.05484 2.10843 6.00465C3.35797 5.80193 4.61139 5.62788 5.86481 5.45189C6.01939 5.43038 6.10347 5.37237 6.17203 5.23027C6.74053 4.05305 7.31485 2.87844 7.89305 1.70579C8.24619 0.987462 8.86837 0.593752 9.75637 0.591797Z' fill='white'/%3e%3c/svg%3e ");
+
+        @include responsive1023 {
+          background-size: 10px;
+        }
+      }
+    }
+  }
+}

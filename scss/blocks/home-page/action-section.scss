@@ -1,0 +1,18 @@
+.action-section {
+  background-color: $colorGrayLight;
+
+  .section-title {
+  }
+}
+
+.action-slider {
+  margin-top: 32px;
+
+  @include responsive1439 {
+    margin-top: 20px;
+  }
+
+  .swiper-slide {
+    height: auto;
+  }
+}

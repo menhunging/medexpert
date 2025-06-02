@@ -1,0 +1,91 @@
+.product-item {
+  background-color: $colorWhite;
+  border-radius: 40px;
+  padding: 25px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 25px;
+  color: $colorGrayDark;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+
+  @include responsive767 {
+    border-radius: 32px;
+    padding: 20px;
+  }
+
+  .picture-block {
+    padding-top: calc(198 / 248 * 100%);
+    width: 250px;
+    margin: 20px auto;
+    @include invisLink;
+
+    @include responsive1649 {
+      padding-top: calc(238 / 248 * 100%);
+    }
+
+    @include responsive1439 {
+      // padding-top: calc(208 / 248 * 100%);
+
+      padding-top: calc(108 / 248 * 100%);
+      width: 120px;
+    }
+
+    @include responsive1199 {
+      padding-top: calc(278 / 250 * 100%);
+      width: 100%;
+    }
+  }
+
+  .btn {
+    margin-top: auto;
+    max-width: 260px;
+  }
+}
+
+.product-item__name {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 25px;
+  text-transform: uppercase;
+  color: $colorBlack;
+}
+
+.product-item__controls {
+  display: flex;
+  align-items: center;
+  background-color: $colorGrayLight;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 25px;
+  gap: 10px;
+  width: auto;
+  padding: 0 12px;
+
+  .hot {
+    width: 42px;
+    height: 36px;
+    position: relative;
+    display: block;
+    margin-left: -12px;
+
+    @include responsive767 {
+      width: 35px;
+      height: 30px;
+    }
+
+    &::after {
+      background-size: 18px;
+
+      @include responsive767 {
+        background-size: 12px;
+      }
+    }
+  }
+
+  .date {
+  }
+}

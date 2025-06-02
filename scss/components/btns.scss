@@ -33,7 +33,7 @@
   &--white {
     border-color: $colorDark;
     color: $colorDark;
-    background-color: $colorWhite;
+    background-color: transparent;
 
     @include hover {
       background-color: $colorDark;

@@ -320,62 +320,102 @@ section {
 .swiper-controls {
   position: relative;
   display: flex;
-  gap: 20px;
-}
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
 
-.swiperBtnPrev {
-  cursor: pointer;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: 0;
-  width: 46px;
-  height: 46px;
-  min-width: 46px;
-  transition: all 0.3s;
-  transform: rotate(-180deg);
-  background-size: contain;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='49' height='49' viewBox='0 0 49 49' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1 24.3333H47.6667M47.6667 24.3333L24.3333 1M47.6667 24.3333L24.3333 47.6667' stroke='%230F0F0F' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ");
-
-  @include responsive767 {
-    width: 30px;
-    height: 30px;
-    min-width: 30px;
-  }
-
-  &:hover {
-    transform: rotate(-180deg) scale(0.9);
+  .btnSwiperPrev,
+  .btnSwiperNext {
+    position: relative;
+    top: auto;
+    right: auto;
+    left: auto;
+    bottom: auto;
+    transform: initial;
   }
 }
 
-.swiperBtnNext {
+.swiper-controls-simple {
+  @include responsive1799 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+
+    .btnSwiperPrev,
+    .btnSwiperNext {
+      position: relative;
+      top: auto;
+      right: auto;
+      left: auto;
+      bottom: auto;
+      transform: initial;
+    }
+  }
+}
+
+.btnSwiperPrev {
   cursor: pointer;
   background-position: center;
   background-repeat: no-repeat;
-  position: relative;
-  top: 0;
-  left: 0;
-  right: 0;
+  position: absolute;
+  top: 50%;
+  left: -57px;
+  right: auto;
   margin: 0;
-  width: 46px;
-  height: 46px;
-  min-width: 46px;
+  width: 39px;
+  height: 39px;
+  min-width: 39px;
   transition: all 0.3s;
-  background-size: contain;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='49' height='49' viewBox='0 0 49 49' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1 24.3333H47.6667M47.6667 24.3333L24.3333 1M47.6667 24.3333L24.3333 47.6667' stroke='%230F0F0F' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ");
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='11' height='9' viewBox='0 0 11 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0.271446 4.14645C0.0761843 4.34171 0.0761843 4.65829 0.271446 4.85355L3.45343 8.03553C3.64869 8.2308 3.96527 8.2308 4.16053 8.03553C4.3558 7.84027 4.3558 7.52369 4.16053 7.32843L1.33211 4.5L4.16053 1.67157C4.3558 1.47631 4.3558 1.15973 4.16053 0.964466C3.96527 0.769204 3.64869 0.769204 3.45343 0.964466L0.271446 4.14645ZM10.375 4.5V4L0.625 4V4.5V5L10.375 5V4.5Z' fill='white'/%3e%3c/svg%3e ");
+  background-color: $colorBlack;
+  background-size: 12px;
+  border-radius: 24px;
+  transform: translateY(-50%);
 
-  @include responsive767 {
-    width: 30px;
-    height: 30px;
-    min-width: 30px;
+  @include hover {
+    background-color: $colorRed;
   }
 
-  &:hover {
-    transform: scale(0.9);
+  &.swiper-button-disabled {
+    opacity: 0.33;
+    pointer-events: none;
   }
+}
+
+.btnSwiperNext {
+  cursor: pointer;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 50%;
+  left: auto;
+  right: -57px;
+  margin: 0;
+  width: 39px;
+  height: 39px;
+  min-width: 39px;
+  transition: all 0.3s;
+  background-size: 12px;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='11' height='9' viewBox='0 0 11 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M10.7286 4.14645C10.9238 4.34171 10.9238 4.65829 10.7286 4.85355L7.54657 8.03553C7.35131 8.2308 7.03473 8.2308 6.83947 8.03553C6.6442 7.84027 6.6442 7.52369 6.83947 7.32843L9.66789 4.5L6.83947 1.67157C6.6442 1.47631 6.6442 1.15973 6.83947 0.964466C7.03473 0.769204 7.35131 0.769204 7.54657 0.964466L10.7286 4.14645ZM0.625 4.5L0.625 4L10.375 4V4.5V5L0.625 5L0.625 4.5Z' fill='white'/%3e%3c/svg%3e ");
+  background-color: $colorBlack;
+  border-radius: 24px;
+  transform: translateY(-50%);
+
+  @include hover {
+    background-color: $colorRed;
+  }
+
+  &.swiper-button-disabled {
+    opacity: 0.33;
+    pointer-events: none;
+  }
+}
+
+.slider-wrapper {
+  width: 100%;
+  position: relative;
 }
 
 .input-item {
@@ -523,43 +563,64 @@ section {
 .radio-block {
   position: relative;
 
+  input {
+    display: none;
+  }
+
   label {
     font-weight: 400;
-    font-size: 16px;
-    line-height: 30px;
     position: relative;
-    padding-left: 17px;
+    padding-left: 35px;
     cursor: pointer;
+    min-height: 27px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 27px;
+    display: block;
+    gap: 3px;
+
+    @include responsive479 {
+      line-height: 20px;
+    }
 
     @include before {
-      left: -10px;
-      top: 2px;
-      width: 17px;
-      height: 17px;
+      left: 0;
+      top: 0;
+      width: 27px;
+      height: 27px;
       border-radius: 50%;
-      border: solid 1px $colorBlack;
+      border: solid 1px $colorWhite;
 
-      @include responsive1549 {
-        top: 0;
+      @include responsive479 {
+        top: -2px;
       }
     }
 
     @include after {
-      left: -7px;
-      top: 5px;
-      width: 11px;
-      height: 11px;
+      left: 7px;
+      top: 7px;
+      width: 13px;
+      height: 13px;
       border-radius: 50%;
-      background-color: $colorBlack;
+      background-color: $colorWhite;
       opacity: 0;
 
-      @include responsive1549 {
-        top: 3px;
+      @include responsive479 {
+        top: 5px;
       }
     }
 
     @include responsive1549 {
       font-size: 12px;
+    }
+
+    a {
+      text-decoration: underline;
+      transition: text-decoration 0.3s;
+
+      @include hover {
+        text-decoration-color: transparent;
+      }
     }
   }
 
@@ -732,50 +793,6 @@ section {
   }
 }
 
-.swiper-controls-simple {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  .btnSwiperPrev {
-    cursor: pointer;
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='8' height='16' viewBox='0 0 8 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M7.79776 0.213013C7.5281 -0.0710044 7.0909 -0.0710044 6.82124 0.213013L0.404486 6.97148C-0.13483 7.53952 -0.134828 8.46048 0.404486 9.02852L6.82124 15.787C7.0909 16.071 7.5281 16.071 7.79776 15.787C8.06741 15.503 8.06741 15.0425 7.79776 14.7585L1.381 8L7.79776 1.24153C8.06741 0.957515 8.06741 0.497031 7.79776 0.213013Z' fill='%234E5457'/%3e%3c/svg%3e ");
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
-    display: flex;
-    border: solid 1px $colorBlack;
-    transition: all 0.3s;
-
-    @include hover {
-      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='8' height='16' viewBox='0 0 8 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M7.79776 0.213013C7.5281 -0.0710044 7.0909 -0.0710044 6.82124 0.213013L0.404486 6.97148C-0.13483 7.53952 -0.134828 8.46048 0.404486 9.02852L6.82124 15.787C7.0909 16.071 7.5281 16.071 7.79776 15.787C8.06741 15.503 8.06741 15.0425 7.79776 14.7585L1.381 8L7.79776 1.24153C8.06741 0.957515 8.06741 0.497031 7.79776 0.213013Z' fill='%23fff'/%3e%3c/svg%3e ");
-      background-color: $colorBlack;
-      border-color: $colorWhite;
-    }
-  }
-
-  .btnSwiperNext {
-    cursor: pointer;
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='8' height='16' viewBox='0 0 8 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.202243 0.213013C0.471901 -0.0710044 0.909102 -0.0710044 1.17876 0.213013L7.59551 6.97148C8.13483 7.53952 8.13483 8.46048 7.59551 9.02852L1.17876 15.787C0.909101 16.071 0.4719 16.071 0.202242 15.787C-0.0674151 15.503 -0.067415 15.0425 0.202242 14.7585L6.619 8L0.202243 1.24153C-0.0674144 0.957515 -0.0674144 0.497031 0.202243 0.213013Z' fill='%234E5457'/%3e%3c/svg%3e ");
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
-    display: flex;
-    border: solid 1px $colorBlack;
-    transition: all 0.3s;
-
-    @include hover {
-      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='8' height='16' viewBox='0 0 8 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.202243 0.213013C0.471901 -0.0710044 0.909102 -0.0710044 1.17876 0.213013L7.59551 6.97148C8.13483 7.53952 8.13483 8.46048 7.59551 9.02852L1.17876 15.787C0.909101 16.071 0.4719 16.071 0.202242 15.787C-0.0674151 15.503 -0.067415 15.0425 0.202242 14.7585L6.619 8L0.202243 1.24153C-0.0674144 0.957515 -0.0674144 0.497031 0.202243 0.213013Z' fill='%23fff'/%3e%3c/svg%3e ");
-      background-color: $colorBlack;
-      border-color: $colorWhite;
-    }
-  }
-}
-
 .overlay {
   background-color: #edeadf;
   position: fixed;
@@ -791,5 +808,89 @@ section {
   &.visible {
     pointer-events: initial;
     opacity: 0.9;
+  }
+}
+
+.section-title {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 30px;
+  padding-right: 300px;
+  position: relative;
+
+  @include responsive1023 {
+    padding-right: 0;
+  }
+
+  .caption {
+    text-transform: uppercase;
+  }
+
+  p {
+    max-width: 555px;
+    color: $colorGrayDark;
+  }
+
+  .btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 260px;
+
+    @include responsive1023 {
+      position: relative;
+    }
+  }
+}
+
+.hot {
+  position: relative;
+  width: 69px;
+  height: 60px;
+  border-radius: 15px;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  z-index: 3;
+
+  @include responsive1199 {
+    width: 50px;
+    height: 50px;
+  }
+
+  @include responsive767 {
+    width: 29px;
+    height: 25px;
+    border-radius: 10px;
+  }
+
+  @include after {
+    background-position: center;
+    background-repeat: no-repeat;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='27' height='34' viewBox='0 0 27 34' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M14.5544 33.5095C13.8918 33.5095 13.2292 33.5095 12.5675 33.5095C12.4759 33.4871 12.386 33.4594 12.2927 33.4448C11.809 33.3679 11.3177 33.323 10.8408 33.2151C7.87464 32.5432 5.39467 31.0423 3.50024 28.6424C1.04167 25.5266 0.10858 21.9652 0.809683 18.0437C1.44059 14.516 3.2828 11.7198 6.18052 9.63766C8.94898 7.64885 10.5532 4.96053 10.9573 1.55113C11.0874 0.450928 11.702 0.132268 12.6608 0.663368C14.5706 1.72125 16.1304 3.16515 17.3074 5.01148C18.9245 7.54694 19.6307 10.3208 19.3714 13.3346C19.3611 13.4547 19.3696 13.5756 19.3696 13.7543C20.081 12.9875 20.6238 12.1835 21.0877 11.3199C21.4618 10.6239 22.1843 10.5168 22.7305 11.0859C26.0297 14.5186 27.324 18.6128 26.2471 23.2615C25.0247 28.5371 21.6493 31.8351 16.4377 33.1857C15.8239 33.3429 15.1836 33.4033 14.5544 33.5095Z' fill='white'/%3e%3c/svg%3e ");
+
+    @include responsive1199 {
+      background-size: 20px;
+    }
+
+    @include responsive767 {
+      background-size: 10px;
+    }
+  }
+
+  @include before {
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(133.28deg, #ff6b88 9.43%, #f3355a 88.11%);
   }
 }
