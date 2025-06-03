@@ -10,6 +10,7 @@
 @import "./components/modals";
 @import "./components/header";
 @import "./components/footer";
+@import "./components/breadcrumbs";
 
 // HOME PAGE
 @import "blocks/home-page/grettings-main.scss";
@@ -21,6 +22,16 @@
 @import "blocks/home-page/reviews-section.scss";
 @import "blocks/home-page/portfolio-section.scss";
 @import "blocks/home-page/form-section.scss";
+
+// ABOUT PAGE
+@import "blocks/about-page/grettings-page.scss";
+@import "blocks/about-page/history-section.scss";
+@import "blocks/about-page/company-numbers.scss";
+@import "blocks/about-page/teams-section.scss";
+
+// CATALOG PAGE
+@import "blocks/catalog-page/faq-section.scss";
+@import "blocks/catalog-page/your-tags.scss";
 
 // BLOCKS
 @import "blocks";

@@ -91,7 +91,7 @@ $(document).ready(function () {
     });
   }
 
-  // sliders
+  // sliders all
 
   if ($(".why-slider").length > 0) {
     const swiper = new Swiper(".why-slider", {
@@ -302,54 +302,130 @@ $(document).ready(function () {
     });
   }
 
-  // /sliders
-
-  // base
-
-  if ($(".grettings-main-slider").length > 0) {
-    const swiper = new Swiper(".grettings-main-slider", {
-      slidesPerView: 1,
-      spaceBetween: 16,
-      effect: "fade",
-      fadeEffect: { crossFade: true },
-      loop: true,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-      },
+  if ($(".history-slider").length > 0) {
+    const swiper = new Swiper(".history-slider", {
+      slidesPerView: 4,
+      spaceBetween: 45,
       navigation: {
-        prevEl: ".grettings-main-slider .btnSwiperPrev",
-        nextEl: ".grettings-main-slider .btnSwiperNext",
-      },
-      pagination: {
-        el: ".swiper-pagination",
+        prevEl: ".history-slider__btns.btnSwiperPrev",
+        nextEl: ".history-slider__btns.btnSwiperNext",
       },
       breakpoints: {
         0: {
-          slidesPerView: 1,
-          spaceBetween: 16,
+          slidesPerView: 1.25,
+          spaceBetween: 15,
+        },
+        480: {
+          slidesPerView: 1.5,
+          spaceBetween: 15,
+        },
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 15,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 15,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 15,
+        },
+        1200: {
+          slidesPerView: 4,
+          spaceBetween: 20,
+        },
+        1440: {
+          slidesPerView: 4,
+          spaceBetween: 45,
         },
       },
     });
   }
 
-  if ($(".faq-list").length > 0) {
-    $(".faq-section__quest").on("click", function () {
-      if ($(this).hasClass("active")) {
-        $(this).removeClass("active");
-        $(this).parents(".faq-item").removeClass("opened");
-        $(this).next(".faq-section__answer").stop().slideUp();
-      } else {
-        $(".faq-item").removeClass("opened");
-        $(".faq-section__quest").removeClass("active");
-        $(".faq-section__answer").stop().slideUp();
+  if ($(".teams-slider").length > 0) {
+    const swiper = new Swiper(".teams-slider", {
+      slidesPerView: 4,
+      spaceBetween: 20,
+      navigation: {
+        prevEl: ".teams-slider__btns.btnSwiperPrev",
+        nextEl: ".teams-slider__btns.btnSwiperNext",
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1.25,
+          spaceBetween: 15,
+        },
+        480: {
+          slidesPerView: 1.5,
+          spaceBetween: 15,
+        },
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 15,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 15,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 15,
+        },
+        1200: {
+          slidesPerView: 4,
+          spaceBetween: 20,
+        },
+        1440: {
+          slidesPerView: 4,
+          spaceBetween: 20,
+        },
+      },
+    });
+  }
 
-        $(this).parents(".faq-item").addClass("opened");
-        $(this).addClass("active");
-        $(this).next(".faq-section__answer").stop().slideDown();
+  // /sliders all
+
+  if ($(".btn-show-tags").length > 0) {
+    $(".btn-show-tags").on("click", function (event) {
+      const self = $(this);
+      const parents = self.parents(".tags-section");
+      const list = parents.find(".tags-list");
+
+      const text = self.data("default-text");
+      const textActive = self.data("active-text");
+
+      event.preventDefault();
+
+      if (self.hasClass("active")) {
+        self.removeClass("active").text(text);
+        list.stop().slideUp();
+      } else {
+        self.addClass("active").text(textActive);
+        list.stop().slideDown();
       }
     });
   }
+
+  // base
+
+  // if ($(".faq-list").length > 0) {
+  //   $(".faq-section__quest").on("click", function () {
+  //     if ($(this).hasClass("active")) {
+  //       $(this).removeClass("active");
+  //       $(this).parents(".faq-item").removeClass("opened");
+  //       $(this).next(".faq-section__answer").stop().slideUp();
+  //     } else {
+  //       $(".faq-item").removeClass("opened");
+  //       $(".faq-section__quest").removeClass("active");
+  //       $(".faq-section__answer").stop().slideUp();
+
+  //       $(this).parents(".faq-item").addClass("opened");
+  //       $(this).addClass("active");
+  //       $(this).next(".faq-section__answer").stop().slideDown();
+  //     }
+  //   });
+  // }
 
   if ($(".subcategories-slider").length > 0) {
     const sliders = document.querySelectorAll(".subcategories-slider");
@@ -451,17 +527,18 @@ $(document).ready(function () {
     });
   }
 
-  if ($("[data-aos]").length > 0) {
-    if ($(window).width() < 1280) {
-      AOS.init({
-        disable: true,
-      });
-    } else {
-      AOS.init({
-        once: true,
-      });
-    }
-  }
+  // if ($("[data-aos]").length > 0) {
+  //   if ($(window).width() < 1280) {
+  //     AOS.init({
+  //       disable: true,
+  //     });
+  //   } else {
+  //     AOS.init({
+  //       once: true,
+  //     });
+  //   }
+  // }
+
   // /base
 });
 
@@ -493,30 +570,20 @@ function scrollDesktop() {
 }
 
 function scrollTouch() {
-  let lastY = 0;
-  let lastDirection = null;
+  let lastScrollTop = window.scrollY || window.pageYOffset;
 
-  document.addEventListener("touchstart", (event) => {
-    lastY = event.touches[0].clientY;
-  });
+  window.addEventListener("scroll", () => {
+    let scrollTop = window.scrollY || window.pageYOffset;
 
-  document.addEventListener("touchmove", (event) => {
-    let currentY = event.touches[0].clientY;
-    let direction = currentY > lastY ? "up" : "down";
-
-    // Игнорируем незначительные движения
-    if (Math.abs(currentY - lastY) < 10) return;
-
-    if (direction !== lastDirection) {
-      if (direction === "up") {
-        $(".header").removeClass("isScroll");
-      } else {
-        $(".header").addClass("isScroll");
-      }
-      lastDirection = direction;
+    if (scrollTop < lastScrollTop) {
+      // страница прокручивается вверх
+      $(".header").removeClass("isScroll");
+    } else {
+      // страница прокручивается вниз
+      $(".header").addClass("isScroll");
     }
 
-    lastY = currentY;
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
   });
 }
 

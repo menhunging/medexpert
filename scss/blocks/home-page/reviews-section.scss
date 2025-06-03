@@ -24,15 +24,23 @@
     height: auto;
     padding-top: calc(345 / 488 * 100%);
     @include invisLink;
+    overflow: hidden;
+    border-radius: 20px;
+
+    img {
+      object-position: top;
+    }
   }
 
   .reviews-item__content {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 4px;
     position: relative;
     padding-right: 115px;
     padding-left: 15px;
+    margin-top: 10px;
 
     @include responsive479 {
       padding-right: 85px;
@@ -117,5 +125,21 @@
         }
       }
     }
+  }
+
+  .btn {
+    max-width: 225px;
+    margin-top: 24px;
+
+    @include responsive639 {
+      width: auto;
+      margin-top: 6px;
+    }
+  }
+}
+
+.reviews-section--v2 {
+  .reviews-item__content {
+    padding-right: 0;
   }
 }

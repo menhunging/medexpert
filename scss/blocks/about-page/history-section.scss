@@ -1,0 +1,54 @@
+.history-section {
+  @include responsive639 {
+    overflow: hidden;
+  }
+}
+
+.history-slider {
+  margin-top: 70px;
+
+  @include responsive1439 {
+    margin-top: 50px;
+  }
+
+  @include responsive767 {
+    margin-top: 30px;
+  }
+
+  @include responsive639 {
+    overflow: visible;
+  }
+
+  .history-item {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    position: relative;
+
+    @include responsive1023 {
+      gap: 15px;
+    }
+
+    @include before {
+      width: 100%;
+      height: 13px;
+      background: linear-gradient(90deg, #1753c3 0%, #ffffff 100%);
+      max-width: 280px;
+    }
+  }
+
+  .history-slider__age {
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 50px;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 45px;
+
+    @include responsive1023 {
+      font-size: 30px;
+      line-height: 40px;
+      margin-top: 35px;
+    }
+  }
+}

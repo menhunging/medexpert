@@ -809,44 +809,51 @@
             </section>
 
             <section class="form-section">
-                <div class="container">
-                    <div class="form-section__left">
-                        <h2 class="caption caption--h2">нужна консультация?</h2>
-                        <p class="form-section__text">
-                            Если у вас есть вопросы или нужна консультация, заполните форму и мы вам перезвоним в
-                            ближайшее время
-                        </p>
-                        <form action="" class="form-section__form">
-                            <div class="input-item">
-                                <input type="text" placeholder="Введите ФИО" name="fio">
-                                <span class="icon icon--fio"></span>
+                <div class="form-section__inner">
+                    <div class="container">
+                        <div class="form-section__content">
+                            <div class="form-section__left">
+                                <h2 class="caption caption--h2">нужна консультация?</h2>
+                                <p class="form-section__text">
+                                    Если у вас есть вопросы или нужна консультация, заполните форму и мы вам перезвоним
+                                    в
+                                    ближайшее время
+                                </p>
+                                <form action="" class="form-section__form">
+                                    <div class="input-item">
+                                        <input type="text" placeholder="Введите ФИО" name="fio">
+                                        <span class="icon icon--fio"></span>
+                                    </div>
+                                    <div class="input-item">
+                                        <input type="text" placeholder="Введите телефон" class="phone-input"
+                                            name="phone">
+                                        <span class="icon icon--phone"></span>
+                                    </div>
+                                    <div class="input-item">
+                                        <input type="email" placeholder="Введите ваш e-mail" name="email">
+                                        <span class="icon icon--mail"></span>
+                                    </div>
+                                    <div class="input-item">
+                                        <textarea type="text" placeholder="Введите ваш вопрос" name="text"></textarea>
+                                    </div>
+                                    <div class="radio-block">
+                                        <input type="checkbox" id="rd" checked name="personal">
+                                        <label for="rd">Даю своё согласие на обработку
+                                            <a href="#">персональных данных</a>
+                                        </label>
+                                    </div>
+                                    <button class="btn btn--fullWhite">Отправить отзыв</button>
+                                </form>
                             </div>
-                            <div class="input-item">
-                                <input type="text" placeholder="Введите телефон" class="phone-input" name="phone">
-                                <span class="icon icon--phone"></span>
-                            </div>
-                            <div class="input-item">
-                                <input type="email" placeholder="Введите ваш e-mail" name="email">
-                                <span class="icon icon--mail"></span>
-                            </div>
-                            <div class="input-item">
-                                <textarea type="text" placeholder="Введите ваш вопрос" name="text"></textarea>
-                            </div>
-                            <div class="radio-block">
-                                <input type="checkbox" id="rd" checked name="personal">
-                                <label for="rd">Даю своё согласие на обработку
-                                    <a href="#">персональных данных</a>
-                                </label>
-                            </div>
-                            <button class="btn btn--fullWhite">Отправить отзыв</button>
-                        </form>
-                    </div>
 
-                    <div class="picture-block">
-                        <picture>
-                            <source type="image/webp" srcset="./../../img/pic-form.webp" />
-                            <img src="./../../img/pic-form.png" alt="">
-                        </picture>
+                            <div class="picture-block">
+                                <picture>
+                                    <source type="image/webp" srcset="./../../img/pic-form.webp" />
+                                    <img src="./../../img/pic-form.png" alt="">
+                                </picture>
+                            </div>
+                        </div>
+
                     </div>
 
                 </div>

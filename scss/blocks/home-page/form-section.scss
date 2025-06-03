@@ -1,18 +1,29 @@
 .form-section {
-  background-image: url("../img/bg-form.png");
-  background-image: image-set(
-    url("../img/bg-form.webp") type("image/webp"),
-    url("../img/bg-form.png") type("image/png")
-  );
-  background-size: cover;
-  width: 100%;
-  color: $colorWhite;
-  position: relative;
-  z-index: 5;
-  margin-bottom: 75px;
+  overflow: hidden;
 
-  @include responsive1199 {
-    margin-bottom: 0;
+  .form-section__inner {
+    background-image: url("../img/bg-form.png");
+    background-image: image-set(
+      url("../img/bg-form.webp") type("image/webp"),
+      url("../img/bg-form.png") type("image/png")
+    );
+    background-size: cover;
+    width: 100%;
+    color: $colorWhite;
+    position: relative;
+    z-index: 3;
+  }
+
+  .form-section__content {
+    padding: 70px 0 120px;
+
+    @include responsive1549 {
+      padding: 50px 0 90px;
+    }
+
+    @include responsive1199 {
+      padding: 30px 0;
+    }
   }
 
   .form-section__left {
@@ -129,7 +140,7 @@
 
     @include responsive1649 {
       left: calc(50% - 200px);
-      top: -60px;
+      top: -70px;
       width: 1006px;
       height: 797px;
     }

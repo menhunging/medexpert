@@ -1,0 +1,113 @@
+.grettings-page {
+  overflow: hidden;
+  padding: 0;
+
+  @include responsive1439 {
+    padding: 0;
+  }
+
+  .grettings-page__inner {
+    background-color: #132e61;
+    color: $colorWhite;
+    min-height: 590px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url("../img/bg-grettings.png");
+    background-image: image-set(
+      url("../img/bg-grettings.webp") type("image/webp"),
+      url("../img/bg-grettings.png") type("image/png")
+    );
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+    @include responsive1549 {
+      min-height: 500px;
+    }
+
+    @include responsive1439 {
+      min-height: 480px;
+    }
+
+    @include responsive1199 {
+      min-height: 450px;
+    }
+
+    @include responsive1023 {
+      display: flex;
+      flex-direction: column;
+      padding: 30px 0;
+    }
+  }
+
+  .grettings-page__content {
+    max-width: 662px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @include responsive1549 {
+      max-width: 580px;
+    }
+
+    @include responsive1439 {
+      max-width: 500px;
+    }
+
+    @include responsive1199 {
+      max-width: 430px;
+    }
+
+    @include responsive1023 {
+      max-width: 100%;
+      gap: 20px;
+    }
+  }
+
+  .caption {
+    text-transform: uppercase;
+  }
+
+  .picture-block {
+    position: absolute;
+    left: calc(50% - 9px);
+    // top: -78px;
+    top: 0;
+    width: 1125px;
+    height: 100%;
+    pointer-events: none;
+
+    @include responsive1549 {
+      width: 813px;
+      height: 630px;
+      left: calc(50% - 92px);
+      top: -93px;
+    }
+
+    @include responsive1439 {
+      width: 700px;
+      height: 100%;
+      left: calc(50% - 55px);
+      top: 1px;
+    }
+
+    @include responsive1199 {
+      left: calc(50% - 95px);
+    }
+
+    @include responsive1023 {
+      width: 100%;
+      left: 0;
+      height: auto;
+      padding-top: calc(300 / 445 * 100%);
+      position: relative;
+      top: 30px;
+    }
+
+    img {
+      object-fit: contain;
+    }
+  }
+}

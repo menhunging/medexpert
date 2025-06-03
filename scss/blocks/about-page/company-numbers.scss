@@ -1,0 +1,105 @@
+.company-numbers {
+  .caption {
+  }
+
+  .company-numbers__list {
+    display: flex;
+    justify-content: space-between;
+    gap: 146px;
+    margin-top: 95px;
+
+    @include responsive1649 {
+      gap: 50px;
+    }
+
+    @include responsive1439 {
+      margin-top: 50px;
+      gap: 30px;
+    }
+
+    @include responsive1199 {
+      gap: 15px;
+    }
+
+    @include responsive1023 {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+    }
+  }
+
+  .company-numbers__item {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 28px;
+    display: flex;
+    align-items: flex-end;
+    gap: 30px;
+
+    @include responsive1649 {
+      gap: 20px;
+    }
+
+    @include responsive1439 {
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    @include responsive1199 {
+      font-size: 16px;
+      line-height: 22px;
+      gap: 5px;
+    }
+
+    @include responsive389 {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+    }
+  }
+
+  .company-numbers__num {
+    font-weight: 500;
+    font-size: 200px;
+    line-height: 150px;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    color: $colorBlue;
+    display: flex;
+    align-items: flex-end;
+
+    @include responsive1649 {
+      font-size: 150px;
+      line-height: 100px;
+    }
+
+    @include responsive1439 {
+      font-size: 130px;
+      line-height: 100px;
+    }
+
+    @include responsive1199 {
+      font-size: 100px;
+      line-height: 70px;
+    }
+  }
+
+  .percent {
+    font-size: 70px;
+    line-height: 70px;
+
+    @include responsive1439 {
+      font-size: 50px;
+      line-height: 50px;
+    }
+
+    @include responsive1199 {
+      line-height: 35px;
+      font-size: 40px;
+    }
+  }
+
+  P {
+    max-width: 215px;
+  }
+}
