@@ -11,13 +11,16 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 35px;
+  gap: 12.5px 17px;
 }
 
 .breadcrumbs__item {
   position: relative;
+  padding-left: 17px;
 
   &:first-child {
+    padding-left: 0;
+
     .breadcrumbs__link {
       &::before {
         display: none;
@@ -35,7 +38,7 @@
     border-radius: 50%;
     background-color: $colorBlue;
     top: 50%;
-    left: -18px;
+    left: -17.5px;
     transform: translateY(-50%);
   }
 }
