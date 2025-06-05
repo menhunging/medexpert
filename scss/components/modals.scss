@@ -122,10 +122,10 @@
 
 .popup-call {
   color: $colorWhite;
-  background-image: url("../../../img/bg-popup.png");
+  background-image: url("../img/bg-popup.png");
   background-image: image-set(
-    url("../../../img/bg-popup.webp") type("image/webp"),
-    url("../../../img/bg-popup.png") type("image/png")
+    url("../img/bg-popup.webp") type("image/webp"),
+    url("../img/bg-popup.png") type("image/png")
   );
   background-position: center;
   background-repeat: no-repeat;
