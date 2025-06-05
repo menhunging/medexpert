@@ -1,0 +1,87 @@
+.commertical-section {
+  overflow: hidden;
+
+  .commertical-section__inner {
+    position: relative;
+    background-image: url("../img/bg-commertical.png");
+    background-image: image-set(
+      url("../img/bg-commertical.webp") type("image/webp"),
+      url("../img/bg-commertical.png") type("image/png")
+    );
+    width: 100%;
+    min-height: 582px;
+    color: $colorWhite;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include responsive1023 {
+      min-height: 380px;
+    }
+
+    @include responsive767 {
+      min-height: initial;
+      padding: 40px 0;
+    }
+  }
+
+  .caption {
+    max-width: 630px;
+    text-transform: uppercase;
+
+    @include responsive1439 {
+      max-width: 450px;
+    }
+  }
+
+  p {
+    max-width: 430px;
+
+    @include responsive1023 {
+      max-width: 280px;
+    }
+  }
+
+  .btn {
+    max-width: 260px;
+
+    @include responsive479 {
+      max-width: 100%;
+    }
+  }
+
+  .picture-block {
+    position: absolute;
+    left: calc(50% + -135px);
+    bottom: 0;
+    width: 1094px;
+    height: 642px;
+
+    @include responsive1023 {
+      width: 650px;
+      height: 380px;
+      left: calc(50% - 95px);
+    }
+
+    @include responsive767 {
+      position: relative;
+      width: 100%;
+      height: auto;
+      padding-top: calc(228 / 375 * 100%);
+      left: 10px;
+      bottom: -40px;
+    }
+  }
+
+  .commertical-section__content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    @include responsive767 {
+      gap: 16px;
+    }
+  }
+}

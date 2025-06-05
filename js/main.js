@@ -94,44 +94,59 @@ $(document).ready(function () {
   // sliders all
 
   if ($(".why-slider").length > 0) {
-    const swiper = new Swiper(".why-slider", {
-      slidesPerView: 1,
-      spaceBetween: 16,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-      },
-      navigation: {
-        prevEl: ".why-slider .btnSwiperPrev",
-        nextEl: ".why-slider .btnSwiperNext",
-      },
-      breakpoints: {
-        0: {
-          slidesPerView: 1,
-          spaceBetween: 15,
-        },
-        640: {
-          slidesPerView: 2,
-          spaceBetween: 15,
-        },
-        768: {
-          slidesPerView: 3,
-          spaceBetween: 15,
-        },
-        1024: {
-          slidesPerView: 4,
-          spaceBetween: 15,
-        },
-        1200: {
-          slidesPerView: 5,
-          spaceBetween: 15,
-        },
-        1550: {
-          slidesPerView: 5,
-          spaceBetween: 28,
-        },
-      },
-    });
+    const sliders = document.querySelectorAll(".why-slider");
+    let mySwipers = [];
+
+    function sliderinit() {
+      sliders.forEach((slider, index) => {
+        let navNext = undefined;
+        let navPrev = undefined;
+
+        if (!slider.swiper) {
+          navNext = $(slider).parents(".why-section").find(".btnSwiperNext")[0];
+          navPrev = $(slider).parents(".why-section").find(".btnSwiperPrev")[0];
+
+          mySwipers[index] = new Swiper(slider, {
+            slidesPerView: 1,
+            spaceBetween: 16,
+            navigation: {
+              nextEl: navNext && navNext,
+              prevEl: navPrev && navPrev,
+            },
+            breakpoints: {
+              0: {
+                slidesPerView: 1,
+                spaceBetween: 15,
+              },
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 15,
+              },
+              768: {
+                slidesPerView: 3,
+                spaceBetween: 15,
+              },
+              1024: {
+                slidesPerView: 4,
+                spaceBetween: 15,
+              },
+              1200: {
+                slidesPerView: 5,
+                spaceBetween: 15,
+              },
+              1550: {
+                slidesPerView: 5,
+                spaceBetween: 28,
+              },
+            },
+          });
+        } else {
+          return;
+        }
+      });
+    }
+
+    sliders.length && sliderinit();
   }
 
   if ($(".action-slider").length > 0) {
@@ -227,6 +242,47 @@ $(document).ready(function () {
       navigation: {
         prevEl: ".reviews-slider__btns.btnSwiperPrev",
         nextEl: ".reviews-slider__btns.btnSwiperNext",
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1.25,
+          spaceBetween: 15,
+        },
+        480: {
+          slidesPerView: 1.5,
+          spaceBetween: 15,
+        },
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 15,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 15,
+        },
+        1024: {
+          slidesPerView: 2,
+          spaceBetween: 15,
+        },
+        1200: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+        1440: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+      },
+    });
+  }
+
+  if ($(".reviews-slider--v2").length > 0) {
+    const swiper = new Swiper(".reviews-slider--v2", {
+      slidesPerView: 3,
+      spaceBetween: 20,
+      navigation: {
+        prevEl: ".reviews-slider--v2__btns.btnSwiperPrev",
+        nextEl: ".reviews-slider--v2__btns.btnSwiperNext",
       },
       breakpoints: {
         0: {
@@ -419,6 +475,103 @@ $(document).ready(function () {
         },
       },
     });
+  }
+
+  if ($(".product-slider-big").length > 0) {
+    const galleryThumbs = new Swiper(".product-slider-small", {
+      slidesPerView: 5,
+      spaceBetween: 13,
+      breakpoints: {
+        0: {
+          slidesPerView: 2,
+          spaceBetween: 10,
+        },
+        480: {
+          slidesPerView: 2,
+          spaceBetween: 10,
+        },
+        640: {
+          slidesPerView: 3,
+          spaceBetween: 10,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 10,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 10,
+        },
+        1200: {
+          slidesPerView: 4,
+          spaceBetween: 15,
+        },
+        1440: {
+          slidesPerView: 5,
+          spaceBetween: 13,
+        },
+      },
+    });
+
+    const swiper = new Swiper(".product-slider-big", {
+      slidesPerView: 1,
+      spaceBetween: 12,
+      navigation: {
+        prevEl: ".product-slider-big .btnSwiperPrev",
+        nextEl: ".product-slider-big .btnSwiperNext",
+      },
+      thumbs: {
+        swiper: galleryThumbs,
+      },
+    });
+  }
+
+  if ($(".simple-product-slider").length > 0) {
+    const sliders = document.querySelectorAll(".simple-product-slider");
+    let mySwipers = [];
+
+    function sliderinit() {
+      sliders.forEach((slider, index) => {
+        let navNext = undefined;
+        let navPrev = undefined;
+
+        if (!slider.swiper) {
+          navNext = $(slider)
+            .parents(".slider-wrapper")
+            .find(".btnSwiperNext")[0];
+          navPrev = $(slider)
+            .parents(".slider-wrapper")
+            .find(".btnSwiperPrev")[0];
+
+          mySwipers[index] = new Swiper(slider, {
+            slidesPerView: 4,
+            spaceBetween: 19,
+            navigation: {
+              nextEl: navNext && navNext,
+              prevEl: navPrev && navPrev,
+            },
+            breakpoints: {
+              0: {
+                slidesPerView: 1,
+                spaceBetween: 16,
+              },
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 16,
+              },
+              1200: {
+                slidesPerView: 4,
+                spaceBetween: 19,
+              },
+            },
+          });
+        } else {
+          return;
+        }
+      });
+    }
+
+    sliders.length && sliderinit();
   }
 
   // /sliders all

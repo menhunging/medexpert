@@ -1,0 +1,39 @@
+.simple-product {
+  .section-title {
+  }
+
+  .caption {
+  }
+
+  .simple-product-slider {
+    margin-top: 66px;
+
+    @include responsive1199 {
+      margin-top: 30px;
+    }
+
+    @include responsive767 {
+      margin-top: 20px;
+    }
+  }
+
+  .product-item {
+    border: solid 1px #d0d0d0;
+
+    .picture-block {
+      @include invisLink;
+    }
+  }
+
+  .product-item__name {
+  }
+
+  .btn {
+  }
+
+  .swiper-controls-simple {
+  }
+
+  .simple-product__btns {
+  }
+}

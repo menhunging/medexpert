@@ -1,6 +1,7 @@
 .reviews-section {
 }
 
+.reviews-slider--v2,
 .reviews-slider {
   margin-top: 38px;
 
@@ -142,4 +143,14 @@
   .reviews-item__content {
     padding-right: 0;
   }
+}
+
+.reviews-item__text {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 25px;
+  color: $colorGrayDark;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 16px;
 }

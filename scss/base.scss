@@ -1191,6 +1191,16 @@ section {
     gap: 3px;
   }
 
+  .social-simple__title {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+
+    @include responsive1199 {
+      font-size: 14px;
+    }
+  }
+
   .btn {
     @include responsive1199 {
       width: 26px;

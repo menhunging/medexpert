@@ -68,7 +68,23 @@
     line-height: 25px;
     color: $colorBlack;
   }
+}
 
-  .why-item__text {
+.why-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 50px;
+
+  @include responsive1439 {
+    margin-top: 30px;
+  }
+
+  @include responsive767 {
+    margin-top: 20px;
+  }
+
+  @include responsive639 {
+    grid-template-columns: 1fr;
   }
 }
