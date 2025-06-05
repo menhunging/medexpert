@@ -1,0 +1,226 @@
+.contacts-section {
+  padding: 30px 0;
+
+  .contacts-row {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    gap: 75px;
+
+    @include responsive1439 {
+      gap: 45px;
+    }
+
+    @include responsive1199 {
+      flex-direction: column;
+      gap: 12px;
+    }
+  }
+
+  .contacts-col {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    &:last-child {
+      @include responsive1199 {
+        order: -1;
+      }
+    }
+
+    @include responsive1199 {
+      width: 100%;
+    }
+  }
+
+  .contacts-phone-block {
+    background-color: $colorGrayLight;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-height: 276px;
+    min-width: 400px;
+
+    @include responsive1439 {
+      min-width: 300px;
+    }
+
+    @include responsive1199 {
+      min-width: initial;
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  .contacts-phone-block__title {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: $colorGrayDark;
+
+    @include responsive1439 {
+      font-size: 14px;
+    }
+  }
+
+  .contacts-phone-block__phone {
+    font-weight: 500;
+    font-size: 37px;
+    line-height: 57px;
+    text-transform: uppercase;
+
+    @include text-decoration-hover($colorBlack);
+
+    @include responsive1439 {
+      font-size: 30px;
+      line-height: 40px;
+    }
+  }
+
+  .btn {
+    max-width: 270px;
+    margin-top: 21px;
+
+    @include responsive1439 {
+      margin-top: 15px;
+    }
+  }
+
+  .social {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 auto;
+
+    .btn {
+      margin: 0;
+    }
+  }
+
+  .contacts-text__adress {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+
+    @include responsive1649 {
+      font-size: 15px;
+    }
+
+    @include responsive1439 {
+      font-size: 14px;
+      margin-top: 15px;
+    }
+
+    @include responsive767 {
+    }
+
+    @include before {
+      position: relative;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='11' height='14' viewBox='0 0 11 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M10.0572 13.2582H1.01983C0.838769 13.2582 0.692383 13.0387 0.692383 12.769V12.5687C0.692383 12.2952 0.838769 12.0756 1.01983 12.0756H10.0572C10.2383 12.0756 10.3847 12.2952 10.3847 12.5648V12.7651C10.3847 13.0348 10.2383 13.2582 10.0572 13.2582Z' fill='white'/%3e%3cpath d='M8.40853 1.62054C6.84066 0.164381 4.16333 0.17979 2.62242 1.65521C0.927425 3.27701 0.730959 5.93508 2.2449 7.75335C2.98839 8.64708 3.79737 9.48687 4.65257 10.3922C5.10328 10.8698 5.86218 10.8775 6.3206 10.4076C7.249 9.4599 8.0965 8.62396 8.85154 7.71098C10.3616 5.88115 10.1189 3.21538 8.40853 1.62054ZM7.63422 6.82881C7.06794 7.56844 6.38224 8.21947 5.49622 9.19025C4.66798 8.24644 4.00924 7.57229 3.4391 6.83266C2.40284 5.48436 2.50686 3.81248 3.63942 2.80318C4.68339 1.87094 6.37838 1.86708 7.42235 2.79548C8.55877 3.81248 8.67819 5.46125 7.63422 6.82881Z' fill='white'/%3e%3c/svg%3e ");
+      width: 33px;
+      height: 33px;
+      min-width: 33px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: $colorBlue;
+      border-radius: 24px;
+      display: block;
+    }
+  }
+
+  .contacts-text__mail {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    margin-top: 30px;
+
+    @include responsive1649 {
+      font-size: 15px;
+    }
+
+    @include responsive1439 {
+      font-size: 14px;
+      margin-top: 15px;
+    }
+
+    @include responsive1199 {
+      margin-top: 0;
+    }
+
+    @include responsive767 {
+    }
+
+    @include before {
+      position: relative;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.0448 11.7304C10.1142 13.749 7.51183 13.2505 6.19223 11.9963C4.74987 10.6249 4.47641 8.37647 5.60915 6.72953C6.26179 5.78023 7.16402 5.19511 8.30086 4.99393C9.44246 4.79207 10.4729 5.08804 11.412 5.75364C11.5729 5.1235 11.9712 4.82889 12.4561 4.96256C12.8421 5.06894 13.0678 5.37651 13.0691 5.81979C13.0719 7.11756 13.0685 8.41602 13.0712 9.7138C13.0726 10.5199 13.4811 11.1336 14.1603 11.3655C15.2105 11.7235 16.3139 11.0123 16.3235 9.89998C16.3433 7.64609 15.81 5.55723 14.2108 3.87073C12.6961 2.27289 10.7955 1.57525 8.61933 1.68641C5.22316 1.85962 2.42983 4.29628 1.77924 7.59221C0.995663 11.5626 3.58781 15.4491 7.55615 16.2211C9.60614 16.62 11.5013 16.217 13.2205 15.0208C13.3024 14.9636 13.3828 14.9049 13.4667 14.8503C13.8984 14.5687 14.3287 14.6424 14.6097 15.044C14.8893 15.4443 14.8136 15.8828 14.4017 16.1863C12.3238 17.7139 10.0092 18.2943 7.46477 17.8599C3.81149 17.2365 0.913828 14.418 0.179353 10.8118C-0.570125 7.13461 1.07273 3.28902 4.29568 1.3802C7.44499 -0.485649 10.6475 -0.448823 13.7804 1.42453C15.4703 2.4352 16.5929 3.95939 17.2816 5.8041C17.7542 7.06914 17.9384 8.38192 17.9684 9.72267C18.0004 11.1623 17.1527 12.4137 15.8147 12.904C14.4972 13.3869 13.0555 12.9729 12.1471 11.8511C12.1185 11.8156 12.0885 11.7822 12.0448 11.7304ZM6.53798 9.02979C6.54957 10.3678 7.66049 11.4719 8.99169 11.4671C10.3263 11.4624 11.4331 10.3535 11.4352 9.02024C11.4372 7.67746 10.3031 6.55085 8.96782 6.56927C7.6264 6.58768 6.52639 7.70201 6.53798 9.02979Z' fill='white'/%3e%3c/svg%3e ");
+      width: 33px;
+      height: 33px;
+      min-width: 33px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: $colorBlue;
+      border-radius: 24px;
+      display: block;
+    }
+  }
+
+  .time-work {
+    margin-top: 30px;
+
+    @include responsive1199 {
+      margin-top: 0;
+    }
+  }
+
+  .picture-block {
+    width: 575px;
+    height: 430px;
+    border-radius: 20px;
+    overflow: hidden;
+
+    @include responsive1439 {
+      width: 480px;
+      height: 380px;
+    }
+
+    @include responsive1199 {
+      width: 100%;
+      height: auto;
+      padding-top: calc(340 / 355 * 100%);
+    }
+  }
+
+  .map {
+    margin-top: 80px;
+    width: 100%;
+    height: 689px;
+    position: relative;
+    border-radius: 40px;
+    overflow: hidden;
+
+    @include responsive1439 {
+      margin-top: 40px;
+    }
+    @include responsive1199 {
+      height: 480px;
+    }
+
+    @include responsive767 {
+      height: 380px;
+    }
+
+    #map {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

@@ -37,6 +37,10 @@
       padding-top: calc(278 / 250 * 100%);
       width: 100%;
     }
+
+    img {
+      object-fit: contain;
+    }
   }
 
   .btn {

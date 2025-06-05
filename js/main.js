@@ -358,6 +358,47 @@ $(document).ready(function () {
     });
   }
 
+  if ($(".portfolio-images-slider").length > 0) {
+    const swiper = new Swiper(".portfolio-images-slider", {
+      slidesPerView: 3,
+      spaceBetween: 20,
+      navigation: {
+        prevEl: ".portfolio-images-slider__btns.btnSwiperPrev",
+        nextEl: ".portfolio-images-slider__btns.btnSwiperNext",
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1.25,
+          spaceBetween: 15,
+        },
+        480: {
+          slidesPerView: 1.5,
+          spaceBetween: 15,
+        },
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 15,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 15,
+        },
+        1024: {
+          slidesPerView: 2,
+          spaceBetween: 15,
+        },
+        1200: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+        1440: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+      },
+    });
+  }
+
   if ($(".history-slider").length > 0) {
     const swiper = new Swiper(".history-slider", {
       slidesPerView: 4,

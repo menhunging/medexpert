@@ -16,3 +16,29 @@
     height: auto;
   }
 }
+
+.actions-list {
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px 20px;
+  margin-top: 50px;
+
+  .product-item {
+    border: solid 1px #d0d0d0;
+  }
+
+  @include responsive1439 {
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  @include responsive1023 {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 20px;
+  }
+
+  @include responsive639{
+    grid-template-columns: 1fr;
+  }
+}

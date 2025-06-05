@@ -154,3 +154,22 @@
   padding-right: 15px;
   margin-top: 16px;
 }
+
+.reviews-list {
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px 20px;
+
+  @include responsive1439 {
+    gap: 20px;
+  }
+
+  @include responsive1023 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.reviews-section-list {
+  padding: 0;
+}

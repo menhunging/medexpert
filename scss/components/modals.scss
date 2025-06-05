@@ -21,9 +21,9 @@
   margin: 0;
   width: 100%;
   padding: 50px 0;
-  max-width: 1050px;
   position: relative;
   margin: auto;
+  max-width: 600px;
 
   @include responsive1199 {
     max-width: 730px;
@@ -49,16 +49,15 @@
   transition: all 0.3s;
   position: absolute;
   right: 0;
-  top: 45px;
+  top: -10px;
   display: flex;
   z-index: 10;
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
-  color: #292929;
   align-items: center;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='41' height='42' viewBox='0 0 41 42' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M40.2989 1.48466C41.0797 2.26569 41.0797 3.5321 40.2989 4.31309L23.3269 21.285L40.2996 38.2577C41.0806 39.0387 41.0806 40.3051 40.2996 41.0861C39.5185 41.867 38.2521 41.8671 37.4711 41.0861L20.4985 24.1135L3.52932 41.0826C2.74834 41.8636 1.48196 41.8635 0.700892 41.0826C-0.0801572 40.3016 -0.0801559 39.0353 0.700892 38.2542L17.6701 21.285L0.701583 4.31654C-0.0792663 3.53552 -0.0793054 2.26912 0.701583 1.48812C1.48258 0.707122 2.74895 0.707232 3.53001 1.48812L20.4985 18.4566L37.4704 1.48466C38.2515 0.703738 39.5179 0.703656 40.2989 1.48466Z' fill='%23FA4F19'/%3e%3c/svg%3e ");
   background-position: center;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='22' height='26' viewBox='0 0 22 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M9.108 13.166L0.368 0.837998H4.232L11.04 10.544L17.802 0.837998H21.712L12.926 13.166L21.712 26H17.802L11.04 15.926L4.232 26H0.368L9.108 13.166Z' fill='%231753C3'/%3e%3c/svg%3e ");
   background-repeat: no-repeat;
   width: 56px;
   height: 56px;
@@ -66,15 +65,13 @@
   @include responsive1199 {
     width: 30px;
     height: 30px;
-    top: 50px;
-    background-size: contain;
+    top: 0;
   }
 
   @include responsive767 {
     width: 20px;
     height: 20px;
-    top: 50px;
-    background-size: contain;
+    top: 20px;
     right: 10px;
   }
 
@@ -112,6 +109,7 @@
 .modal__overlay {
   background-color: #edeadf;
   transition: all 0.3s;
+  background-color: $colorBlack-a5;
 }
 
 .micromodal-slide .modal__container,
@@ -119,69 +117,52 @@
   will-change: inherit;
 }
 
-// .popup-send {
-//   .partners {
-//     padding: 0;
-//   }
-// }
+#popup-call {
+}
 
-// #popup-guarant {
-//   .modal__container {
-//     max-width: 624px;
+.popup-call {
+  color: $colorWhite;
+  background-image: url("../../../img/bg-popup.png");
+  background-image: image-set(
+    url("../../../img/bg-popup.webp") type("image/webp"),
+    url("../../../img/bg-popup.png") type("image/png")
+  );
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 40px;
+  overflow: hidden;
+  padding: 80px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  min-height: 550px;
 
-//     @include responsive1549 {
-//       max-width: 800px;
-//     }
+  @include responsive1199 {
+    padding: 40px 20px;
+    min-height: 320px;
+  }
 
-//     @include responsive1199 {
-//       max-width: 95%;
-//     }
-//   }
+  .input-item {
+    position: relative;
+  }
 
-//   .modal__close {
-//     width: 36px;
-//     height: 36px;
-//     background-size: 26px;
-//     right: 5px;
-//     top: 5px;
+  .form-section__form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
 
-//     @include responsive1199 {
-//     }
-//   }
-// }
+  .radio-block {
+    margin: 12px 0;
+  }
 
-// .popup-guarant {
-//   background-color: $colorWhite;
-//   padding: 32px;
-//   display: flex;
-//   flex-direction: column;
-//   border-radius: 24px;
-//   overflow: hidden;
-//   gap: 40px;
+  .caption {
+    text-transform: uppercase;
+  }
 
-//   @include responsive1549 {
-//     padding: 24px;
-//     gap: 20px;
-//   }
-
-//   @include responsive1199 {
-//     padding: 16px;
-//     gap: 16px;
-//   }
-
-//   @include responsive767 {
-//     font-size: 12px;
-//   }
-
-//   .caption {
-//     font-family: $fontRadiotechnika;
-//     font-weight: 400;
-//   }
-
-//   .picture-block {
-//     width: 100%;
-//     height: 200px;
-//     background-color: rgba(183, 170, 154, 0.2);
-//     border-radius: 8px;
-//   }
-// }
+  .btn {
+    max-width: 270px;
+  }
+}

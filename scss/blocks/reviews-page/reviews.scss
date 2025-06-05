@@ -1,0 +1,43 @@
+.reviews-page {
+  padding: 0;
+
+  .commertical-section {
+    .caption {
+      max-width: 530px;
+
+      @include responsive1439 {
+        max-width: 410px;
+      }
+
+      @include responsive1023 {
+        max-width: 350px;
+      }
+
+      @include responsive767 {
+        max-width: 100%;
+      }
+    }
+
+    p {
+      max-width: 600px;
+
+      @include responsive1439 {
+        max-width: 450px;
+      }
+
+      @include responsive1023 {
+        max-width: 310px;
+      }
+
+      @include responsive767 {
+        max-width: 100%;
+      }
+    }
+  }
+
+  .caption {
+  }
+
+  .picture-block {
+  }
+}
