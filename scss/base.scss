@@ -911,6 +911,7 @@ section {
   @include responsive767 {
     font-size: 16px;
     line-height: 24px;
+    padding-right: 0;
   }
 
   @include responsive389 {
