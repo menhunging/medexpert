@@ -107,7 +107,13 @@
   }
 
   .caption {
+    cursor: pointer;
     color: $colorBlack;
+    transition: color 0.3s;
+
+    @include hover {
+      color: $colorBlue;
+    }
   }
 
   p {

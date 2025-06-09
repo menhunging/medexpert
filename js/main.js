@@ -593,11 +593,11 @@ $(document).ready(function () {
             },
             breakpoints: {
               0: {
-                slidesPerView: 1,
+                slidesPerView: 1.25,
                 spaceBetween: 16,
               },
               640: {
-                slidesPerView: 2,
+                slidesPerView: 2.5,
                 spaceBetween: 16,
               },
               1200: {
@@ -829,65 +829,18 @@ $(document).ready(function () {
     });
   }
 
-  // if ($(".subcategories-slider").length > 0) {
-  //   const sliders = document.querySelectorAll(".subcategories-slider");
-  //   let mySwipers = [];
+  if ($(".js-hidden-text").length > 0) {
+    $(".js-hidden-text").each(function () {
+      $(this).on("click", function (event) {
+        let parents = $(this).parents(".simple-section");
+        let textHidden = parents.find(".text-hidden");
 
-  //   function sliderinit() {
-  //     sliders.forEach((slider, index) => {
-  //       let navNext = undefined;
-  //       let navPrev = undefined;
-
-  //       if (!slider.swiper) {
-  //         navNext = $(slider)
-  //           .parents(".subcategories")
-  //           .find(".btnSwiperNext")[0];
-  //         navPrev = $(slider)
-  //           .parents(".subcategories")
-  //           .find(".btnSwiperPrev")[0];
-
-  //         mySwipers[index] = new Swiper(slider, {
-  //           slidesPerView: 3,
-  //           spaceBetween: 24,
-  //           navigation: {
-  //             nextEl: navNext && navNext,
-  //             prevEl: navPrev && navPrev,
-  //           },
-  //           breakpoints: {
-  //             0: {
-  //               slidesPerView: 1,
-  //               spaceBetween: 16,
-  //             },
-  //             640: {
-  //               slidesPerView: 2,
-  //               spaceBetween: 16,
-  //             },
-  //             1280: {
-  //               slidesPerView: 3,
-  //               spaceBetween: 24,
-  //             },
-  //           },
-  //         });
-  //       } else {
-  //         return;
-  //       }
-  //     });
-  //   }
-
-  //   sliders.length && sliderinit();
-  // }
-
-  // if ($("[data-aos]").length > 0) {
-  //   if ($(window).width() < 1280) {
-  //     AOS.init({
-  //       disable: true,
-  //     });
-  //   } else {
-  //     AOS.init({
-  //       once: true,
-  //     });
-  //   }
-  // }
+        event.preventDefault(0);
+        textHidden.stop().slideDown();
+        $(this).hide(0);
+      });
+    });
+  }
 });
 
 function scrollDesktop() {

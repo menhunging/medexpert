@@ -65,6 +65,10 @@
     top: 50%;
     left: 5px;
     z-index: 3;
+
+    @include responsive767 {
+      display: none;
+    }
   }
 
   .btnSwiperNext {
@@ -72,6 +76,10 @@
     top: 50%;
     right: 5px;
     z-index: 3;
+
+    @include responsive767 {
+      display: none;
+    }
   }
 }
 
@@ -431,10 +439,10 @@
         }
 
         @include responsive479 {
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          text-align: center;
+          // flex-direction: column;
+          // justify-content: center;
+          // align-items: center;
+          // text-align: center;
           gap: 5px;
         }
 
@@ -454,11 +462,12 @@
           }
 
           @include responsive479 {
-            width: 100%;
-            text-align: center;
-            align-items: center;
-            justify-content: center;
+            width: 40%;
             padding: 5px;
+            font-size: 14px;
+          }
+          @include responsive389 {
+            width: 100%;
           }
         }
 
@@ -477,6 +486,9 @@
 
           @include responsive479 {
             width: 100%;
+            padding: 15px 10px;
+            font-size: 14px;
+            line-height: 20px;
           }
         }
       }

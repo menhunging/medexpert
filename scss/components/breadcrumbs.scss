@@ -12,19 +12,55 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 12.5px 17px;
+
+  @include responsive767 {
+    @include after {
+      content: "...";
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 28px;
+      position: relative;
+      width: auto;
+      height: auto;
+      order: 2;
+      margin-left: 17.5px;
+    }
+  }
 }
 
 .breadcrumbs__item {
   position: relative;
   padding-left: 17px;
 
+  @include responsive767 {
+    display: none;
+  }
+
   &:first-child {
     padding-left: 0;
+
+    @include responsive767 {
+      display: block;
+      order: 1;
+    }
 
     .breadcrumbs__link {
       &::before {
         display: none;
+
+        @include responsive767 {
+          display: block;
+          right: -17.5px;
+          left: auto;
+        }
       }
+    }
+  }
+
+  &:last-child {
+    @include responsive767 {
+      display: block;
+      order: 3;
     }
   }
 }
