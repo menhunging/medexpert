@@ -1,4 +1,6 @@
 $(document).ready(function () {
+  scrollDesktop();
+
   if (!("ontouchstart" in window)) {
     scrollDesktop();
   } else {
@@ -867,26 +869,22 @@ function scrollDesktop() {
 }
 
 function scrollTouch() {
-  let previousY = 0;
-  let scrollingUp = false;
-
-  document.addEventListener("touchstart", (event) => {
-    previousY = event.touches[0].clientY;
-  });
-
-  document.addEventListener("touchmove", (event) => {
-    const currentY = event.touches[0].clientY;
-
-    if (currentY < previousY) {
-      scrollingUp = true;
-      $(".header").addClass("isScroll");
-    } else {
-      scrollingUp = false;
-      $(".header").removeClass("isScroll");
-    }
-
-    previousY = currentY;
-  });
+  // let previousY = 0;
+  // let scrollingUp = false;
+  // document.addEventListener("touchstart", (event) => {
+  //   previousY = event.touches[0].clientY;
+  // });
+  // document.addEventListener("touchmove", (event) => {
+  //   const currentY = event.touches[0].clientY;
+  //   if (currentY < previousY) {
+  //     scrollingUp = true;
+  //     $(".header").addClass("isScroll");
+  //   } else {
+  //     scrollingUp = false;
+  //     $(".header").removeClass("isScroll");
+  //   }
+  //   previousY = currentY;
+  // });
 }
 
 function clearInput(input) {
