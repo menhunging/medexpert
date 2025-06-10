@@ -850,10 +850,10 @@ function scrollDesktop() {
     window.deltaY = event.originalEvent.deltaY;
   });
 
-  $(window).on("touchmove", function (event) {
-    window.deltaY = event.originalEvent.touches[0].clientY - window.lastTouchY;
-    window.lastTouchY = event.originalEvent.touches[0].clientY;
-  });
+  // $(window).on("touchmove", function (event) {
+  //   window.deltaY = event.originalEvent.touches[0].clientY - window.lastTouchY;
+  //   window.lastTouchY = event.originalEvent.touches[0].clientY;
+  // });
 
   $(window).on("scroll", function () {
     let currentScroll = $(window).scrollTop();
