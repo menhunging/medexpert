@@ -2098,6 +2098,24 @@ section {
     height: auto;
   }
 }
+.simple-page ol {
+  list-style-type: decimal;
+}
+.simple-page ul li {
+  position: relative;
+  padding-left: 22px;
+}
+.simple-page ul li::before {
+  content: "";
+  position: absolute;
+  transition: all 0.3s;
+  top: 7px;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background-size: contain;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3crect x='4.75781' width='7.41425' height='7.41425' rx='2' transform='rotate(45 4.75781 0)' fill='%231753C3'/%3e%3c/svg%3e ");
+}
 .simple-page .simple-page__row {
   display: grid;
   align-items: center;
