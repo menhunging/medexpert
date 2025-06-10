@@ -1092,6 +1092,11 @@ section {
     padding-right: 0;
   }
 }
+@media (max-width: 639px) {
+  .section-title {
+    flex-direction: column;
+  }
+}
 @media (max-width: 389px) {
   .section-title {
     flex-direction: column;
@@ -1110,7 +1115,7 @@ section {
   top: 0;
   width: 260px;
 }
-@media (max-width: 389px) {
+@media (max-width: 639px) {
   .section-title .btn {
     position: relative;
   }

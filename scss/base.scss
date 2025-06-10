@@ -914,6 +914,10 @@ section {
     padding-right: 0;
   }
 
+  @include responsive639 {
+    flex-direction: column;
+  }
+
   @include responsive389 {
     flex-direction: column;
   }
@@ -933,11 +937,7 @@ section {
     top: 0;
     width: 260px;
 
-    // @include responsive1023 {
-    //   position: relative;
-    // }
-
-    @include responsive389 {
+    @include responsive639 {
       position: relative;
     }
   }
