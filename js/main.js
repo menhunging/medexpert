@@ -846,22 +846,14 @@ $(document).ready(function () {
 });
 
 function scrollDesktop() {
-  if (!("ontouchstart" in window)) {
-    $(window).on("wheel", function (event) {
-      window.deltaY = event.originalEvent.deltaY;
-    });
-  } else {
-    $(window).on(
-      "touchmove",
-      function (event) {
-        event.preventDefault();
-        let currentTouchY = event.originalEvent.touches[0].clientY;
-        window.deltaY = currentTouchY - window.lastTouchY;
-        window.lastTouchY = currentTouchY;
-      },
-      { passive: false }
-    );
-  }
+  $(window).on("wheel", function (event) {
+    window.deltaY = event.originalEvent.deltaY;
+  });
+
+  $(window).on("touchmove", function (event) {
+    window.deltaY = event.originalEvent.touches[0].clientY - window.lastTouchY;
+    window.lastTouchY = event.originalEvent.touches[0].clientY;
+  });
 
   $(window).on("scroll", function () {
     let currentScroll = $(window).scrollTop();
