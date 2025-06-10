@@ -1,11 +1,9 @@
 $(document).ready(function () {
-  scrollDesktop();
-
-  // if (!("ontouchstart" in window)) {
-  //   scrollDesktop();
-  // } else {
-  //   scrollTouch();
-  // }
+  if (!("ontouchstart" in window)) {
+    scrollDesktop();
+  } else {
+    scrollTouch();
+  }
 
   if ($(".header-top__search").length > 0) {
     const btn = $(".header-top__search");
@@ -850,11 +848,6 @@ function scrollDesktop() {
     window.deltaY = event.originalEvent.deltaY;
   });
 
-  // $(window).on("touchmove", function (event) {
-  //   window.deltaY = event.originalEvent.touches[0].clientY - window.lastTouchY;
-  //   window.lastTouchY = event.originalEvent.touches[0].clientY;
-  // });
-
   $(window).on("scroll", function () {
     let currentScroll = $(window).scrollTop();
     let heightHeaderTop = $(".header-top").outerHeight() - 30;
@@ -873,23 +866,28 @@ function scrollDesktop() {
   });
 }
 
-// function scrollTouch() {
-//   let lastScrollTop = window.scrollY || window.pageYOffset;
+function scrollTouch() {
+  let previousY = 0;
+  let scrollingUp = false;
 
-//   window.addEventListener("scroll", () => {
-//     let scrollTop = window.scrollY || window.pageYOffset;
+  document.addEventListener("touchstart", (event) => {
+    previousY = event.touches[0].clientY;
+  });
 
-//     if (scrollTop < lastScrollTop) {
-//       // страница прокручивается вверх
-//       $(".header").removeClass("isScroll");
-//     } else {
-//       // страница прокручивается вниз
-//       $(".header").addClass("isScroll");
-//     }
+  document.addEventListener("touchmove", (event) => {
+    const currentY = event.touches[0].clientY;
 
-//     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-//   });
-// }
+    if (currentY < previousY) {
+      scrollingUp = true;
+      $(".header").addClass("isScroll");
+    } else {
+      scrollingUp = false;
+      $(".header").removeClass("isScroll");
+    }
+
+    previousY = currentY;
+  });
+}
 
 function clearInput(input) {
   input.val("").focus().trigger("input");
